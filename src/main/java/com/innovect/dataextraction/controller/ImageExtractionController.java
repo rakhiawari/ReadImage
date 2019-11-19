@@ -14,6 +14,7 @@ public class ImageExtractionController {
 
     @RequestMapping("/getString")
     public String getString() {
-        return imageExtractionService.getString();
+        String temp= imageExtractionService.getString();
+        return temp;
     }
 }

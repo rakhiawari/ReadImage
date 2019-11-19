@@ -12,11 +12,14 @@ import java.io.File;
 public class ImageEntry {
 
 
-    public String crackImage() {
+    public  String crackImage() {
 
+        File imagePath=new File("/home/rakhi/Desktop/text.png");
         ITesseract image = new Tesseract();
+        image.setDatapath("/home/rakhi/Spring-boot-projects/data-extraction/tessdata");
+        image.setLanguage("eng");
         try {
-            String result = image.doOCR(new File("/home/rakhi/Desktop/image.png"));
+            String result = image.doOCR(imagePath);
             return result;
         } catch (TesseractException e) {
             System.err.println(e.getMessage());
